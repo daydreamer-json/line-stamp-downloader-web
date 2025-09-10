@@ -1,0 +1,38 @@
+:root {
+  /* --ddjson-custom-font-main: 'Malgun Gothic'; */
+  --ddjson-custom-font-main: 'Noto Sans', 'Noto Sans JP', 'Noto Sans SC', 'SF Pro', -apple-system, 'BlinkMacSystemFont',
+    'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif, system-ui;
+  --ddjson-custom-font-mono: 'Iosevka Web', 'JetBrains Mono', 'SF Mono', 'Noto Sans JP', 'Noto Sans SC',
+    'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', monospace, sans-serif, system-ui;
+}
+
+html,
+body {
+  font-family: var(--ddjson-custom-font-main);
+  font-feature-settings: 'liga' 1, 'calt' 1, 'palt';
+  word-break: auto-phrase;
+}
+
+.font-monospace {
+  font-family: var(--ddjson-custom-font-mono) !important;
+}
+
+pre,
+code,
+kbd,
+samp,
+tt {
+  font-family: var(--ddjson-custom-font-mono);
+}
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  font-size: inherit;
+}
+
+.user-drag-none {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
