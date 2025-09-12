@@ -15,11 +15,11 @@ window.addEventListener('DOMContentLoaded', async () => {
   })();
 });
 window.addEventListener('load', () => {
-  admaxOptimize();
   (() => {
     const adblockerDetectResult = detectAdBlockerByElementSize();
     if (adblockerDetectResult === true && !(getUrlQueryParams().adblockDetect && getUrlQueryParams().adblockDetect === 'false')) document.getElementById('mainContainer').innerHTML = adblockerDetectedMessage;
   })();
+  admaxOptimize();
 });
 window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', updateUiTheme);
 
