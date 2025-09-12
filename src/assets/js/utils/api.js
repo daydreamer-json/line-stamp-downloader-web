@@ -17,5 +17,31 @@ export default {
       searchParams: { category, type, query, offset: parseInt(offset), limit: parseInt(limit) }
     }).json();
     return rsp;
+  },
+  getMetaWebSticker: async (id, lang = 'ja') => {
+    const rsp = await ky.get(`${API_BASE_URL}/api/meta_web/sticker/${id}`, {
+      searchParams: { lang }
+    }).json();
+    return rsp;
+  },
+  getMetaWebEmoji: async (id, lang = 'ja') => {
+    const rsp = await ky.get(`${API_BASE_URL}/api/meta_web/emoji/${id}`, {
+      searchParams: { lang }
+    }).json();
+    return rsp;
+  },
+  getMetaSticker: async (id, deviceType = 'ios') => {
+    const validDeviceTypes = ['ios', 'android', 'pc'];
+    const rsp = await ky.get(`${API_BASE_URL}/api/meta/sticker/${id}`, {
+      searchParams: { device_type: deviceType }
+    }).json();
+    return rsp;
+  },
+  getMetaEmoji: async (id, deviceType = 'ios') => {
+    const validDeviceTypes = ['ios', 'android'];
+    const rsp = await ky.get(`${API_BASE_URL}/api/meta/emoji/${id}`, {
+      searchParams: { device_type: deviceType }
+    }).json();
+    return rsp;
   }
 }
