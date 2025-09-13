@@ -12,7 +12,7 @@ window.addEventListener('DOMContentLoaded', async () => {
 
   buildInfoHtml(productMetaRsp, productMetaWebRsp);
   document.getElementById('productInfo_downloadZipButton').addEventListener('click', () => {
-    window.open(`${backendApi.API_BASE_URL}/api/download/sticker/zip/${productMetaRsp.packageId}`, '_blank');
+    window.open(`${backendApi.API_BASE_URL}/api/download/sticker/zip/${productMetaRsp.packageId}` + (productMetaRsp.stickerResourceType === 'STATIC' ? '?is_static=true' : ''), '_blank');
   });
   buildStickerListHtml(productMetaRsp, productMetaWebRsp);
 
