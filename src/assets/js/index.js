@@ -94,7 +94,7 @@ await (async () => {
 
       if (rsp.items && rsp.items.length > 0) {
         rsp.items.forEach(el => {
-          document.getElementById('searchSection_resultCardContainer').insertAdjacentHTML('beforeend', `<div class="col"><a href="./product/${currentCategory}.html?id=${el.id}"><div class="card"><img src="${backendApi.API_BASE_URL}/api/download/${currentCategory}/thumb/${el.id}" class="card-img-top" /><div class="card-body"><p class="card-text">${el.title}</p></div></div></a></div>`);
+          document.getElementById('searchSection_resultCardContainer').insertAdjacentHTML('beforeend', `<div class="col"><a class="link-underline link-underline-opacity-0" href="./product/${currentCategory}.html?id=${el.id}"><div class="card"><img src="${backendApi.API_BASE_URL}/api/download/${currentCategory}/thumb/${el.id}" class="card-img-top" /><div class="card-body"><p class="card-text">${el.title}</p></div></div></a></div>`);
         });
 
         // totalPagesを計算 (total_countがあれば使用、なければ推定)
