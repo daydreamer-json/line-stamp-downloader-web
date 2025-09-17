@@ -8,8 +8,8 @@ const adJson = (() => {
     return JSON.parse(process.env.AD_JSON || '{}');
   }
 })();
-const isAdActive = process.env.AD_ENABLED ? Boolean(process.env.AD_ENABLED) : false;
-const ageRestrictType = process.env.AD_AGE_RESTRICT_TYPE || 'general'; // 'general' or 'restrict'
+const isAdActive = process.env.AD_ENABLED ? process.env.AD_ENABLED.toLowerCase() === 'true' : false;
+const ageRestrictType = process.env.AD_AGE_RESTRICT_TYPE ? (['general', 'restrict'].includes(process.env.AD_AGE_RESTRICT_TYPE) ? process.env.AD_AGE_RESTRICT_TYPE : 'general') : 'general'; // 'general' or 'restrict'
 
 const replaceText = [
   ['<!-- AD - Admax -->',
