@@ -122,6 +122,11 @@ function stickerSingleModalInitialize(stickerId, hasAnimation, hasSound) {
             </button> -->
           </div>
           <hr class="my-4" />
+          <h5 class="mt-0">Muxed Video</h5>
+          <div class="text-center align-items-center">
+            <video class="" controls src="${backendApi.API_BASE_URL}/api/download/sticker/mp4/single/${stickerId}?is_static=${!hasAnimation}"></video>
+          </div>
+          <hr class="my-4" />
         `
       } else { return '' }
     })()}
