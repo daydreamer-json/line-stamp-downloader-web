@@ -13,15 +13,15 @@ const ageRestrictType = process.env.AD_AGE_RESTRICT_TYPE ? (['general', 'restric
 
 const replaceText = [
   ['<!-- AD - Admax -->',
-    '<section id="ads_admax" class="text-center">' +
+    '<section id="ads_admax" class="text-center">\n' +
     adJson[ageRestrictType].admaxWide.map(e => `        <script data-cfasync="false" src="https://adm.shinobi.jp/${e}"></script>`).join('\n') +
     '\n      </section>'],
   ['<!-- AD - Admax (square) -->',
-    '<section id="ads_admax_square" class="text-center">' +
+    '<section id="ads_admax_square" class="text-center">\n' +
     adJson[ageRestrictType].admaxSquare.map(e => `        <script data-cfasync="false" src="https://adm.shinobi.jp/${e}"></script>`).join('\n') +
     '\n      </section>'],
   ['<!-- AD - AADS -->',
-    '<section id="ads_aads" class="text-center">' +
+    '<section id="ads_aads" class="text-center">\n' +
     adJson[ageRestrictType].aadsWide.map(e => `        <div id="frame" style="width: 100%; margin: auto; position: relative"><iframe data-aa="${e}" src="https://acceptable.a-ads.com/${e}/?size=Adaptive&background_color=transparent" style="border: 0; padding: 0; width: 100%; height: auto; overflow: hidden; display: block; margin: auto"></iframe></div>`).join('\n') +
     '\n      </section>'],
   ['<!-- AD - Admax (inter) -->',
