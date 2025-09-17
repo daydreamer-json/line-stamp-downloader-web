@@ -10,6 +10,10 @@ https://line-store-downloader.daydreamer-json.cc/
 
 This website was created to address the shortcoming that the official LINE Store page does not provide a method for downloading products. It also aims to make products available on platforms other than LINE.
 
+## Setup
+
+To insert ads, you need to modify the environment variables. For details, refer to [build.js](/build.js).
+
 ## Disclaimer
 
 This project has no affiliation with LY Corporation (ja: LINE ヤフー株式会社) and was created solely for private use, educational, and research purposes.

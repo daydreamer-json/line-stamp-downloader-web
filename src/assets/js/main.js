@@ -1,5 +1,3 @@
-import ky from 'https://cdn.jsdelivr.net/npm/ky/+esm';
-
 function updateUiTheme() {
   const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
   document.documentElement.setAttribute('data-bs-theme', isDarkMode ? 'dark' : 'light');
@@ -57,11 +55,10 @@ async function detectAdBlocker(url = 'https://adm.shinobi.jp/o/38f0bc01bfd6e18af
 
 function detectAdBlockerByElementSize() {
   const admaxElement = document.getElementById('ads_admax');
-  if (!admaxElement) {
-    return false;
-  }
-  const height = admaxElement.offsetHeight;
-  return height <= 5;
+  const admaxSquareElement = document.getElementById('ads_admax_square');
+  if (!admaxElement && !admaxSquareElement) return false;
+  const height = admaxElement.offsetHeight + admaxSquareElement.offsetHeight;
+  return height <= 8;
 }
 
 function getUrlQueryParams() {
